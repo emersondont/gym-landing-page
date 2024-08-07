@@ -1,33 +1,43 @@
+/* fonts Poppins and Urbanist */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.header {
+  animation: lighten linear forwards;
+  animation-duration: 1ms; /* Firefox requires this to apply the animation */
+  animation-timeline: scroll();
+  animation-range: 10vh 80vh;
+  background-color: transparent;
+  --tw-backdrop-blur: blur(0);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes lighten {
+  0% {
+    background-color: transparent;
+    --tw-backdrop-blur: blur(2px);
+  }
+  100% {
+    background-color: #090707;
+    --tw-backdrop-blur: blur(12px);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+/* main section {
+  animation: show linear both;
+  animation-duration: 1ms; 
+  animation-timeline: view();
+  animation-range: entry-crossing 0% contain 0%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes show {
+  0% {
+    opacity: 0;
   }
-}
+  100% {
+    opacity: 1;
+  }
+} */
