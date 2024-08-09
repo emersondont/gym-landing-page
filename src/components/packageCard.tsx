@@ -19,7 +19,7 @@ export default function PackageCard({ pkg }: Props) {
     benefits_button: pkg.bestOffer ? 'gap-16' : 'gap-9',
   }
   return (
-    <div className={`relative flex flex-col gap-6 px-6 ${spacing['card']} rounded-2xl ${colors['bg']} overflow-hidden min-w-72 snap-center animate-appear`}>
+    <div className={`relative flex flex-col gap-6 px-6 ${spacing['card']} rounded-2xl ${colors['bg']} overflow-hidden min-w-72 snap-center animate-appear first:ml-auto last:mr-auto`}>
       <p className={`font-urbanist font-semibold text-lg ${colors['name']} sm:text-xl`}>
         {pkg.name}
       </p>
