@@ -1,10 +1,10 @@
 import { Package } from "@/data/packages";
 import { FaCircleCheck } from "react-icons/fa6";
+import { motion } from 'framer-motion';
 
 type Props = {
   pkg: Package;
 }
-
 
 export default function PackageCard({ pkg }: Props) {
   const colors = {
@@ -18,8 +18,18 @@ export default function PackageCard({ pkg }: Props) {
     card: pkg.bestOffer ? 'py-11' : 'py-7',
     benefits_button: pkg.bestOffer ? 'gap-16' : 'gap-9',
   }
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4 },
+    }
+  };
   return (
-    <div className={`relative flex flex-col gap-6 px-6 ${spacing['card']} rounded-2xl ${colors['bg']} overflow-hidden min-w-72 snap-center animate-appear first:ml-auto last:mr-auto`}>
+    <motion.div
+      variants={itemVariants}
+      className={`relative flex flex-col gap-6 px-6 ${spacing['card']} rounded-2xl ${colors['bg']} overflow-hidden min-w-72 snap-center first:ml-auto last:mr-auto`}>
       <p className={`font-urbanist font-semibold text-lg ${colors['name']} sm:text-xl`}>
         {pkg.name}
       </p>
@@ -61,6 +71,6 @@ export default function PackageCard({ pkg }: Props) {
           </div>
         )
       }
-    </div>
+    </motion.div>
   )
 }

@@ -1,13 +1,22 @@
 import { Info } from "@/data/infos";
-
-
+import { motion } from 'framer-motion';
 type Props = {
   info: Info;
 }
 
 export default function InfoCard({ info }: Props) {
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4 },
+    },
+  };
   return (
-    <div className='min-w-80 rounded-xl flex flex-col gap-6 px-6 py-9 bg-bg1 snap-center group hover:bg-primary ease-out duration-500'>
+    <motion.div
+      variants={itemVariants}
+      className='min-w-80 rounded-xl flex flex-col gap-6 px-6 py-9 bg-bg1 snap-center group hover:bg-primary ease-out duration-500'>
       <div className='text-primary group-hover:text-tx1 ease-out duration-500'>
         <info.Icon />
       </div>
@@ -20,6 +29,6 @@ export default function InfoCard({ info }: Props) {
           {info.description}
         </p>
       </div>
-    </div>
+    </motion.div>
   )
 }
