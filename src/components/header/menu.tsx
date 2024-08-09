@@ -61,8 +61,7 @@ export default function Menu() {
 
       <ul className={`absolute flex gap-4 flex-col bg-bg2 top-14 w-60 -right-60 h-screen px-8 py-4
       md:flex-row md:static md:w-auto md:h-auto md:px-0 md:py-0 md:translate-x-0 md:bg-transparent
-      ${menuVariants[menuStatus]} transition-transform ease-out duration-500
-      `}
+      ${menuVariants[menuStatus]} transition-transform ease-out duration-500`}
       ref={menuRef}
       >
         {options.map((option, index) => (

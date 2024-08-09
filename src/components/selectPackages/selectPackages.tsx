@@ -41,8 +41,7 @@ export default function SelectPackages() {
         />
       ))}
       
-      <div className={`absolute w-24 bg-bg1 rounded h-[calc(100%-1rem)] duration-500 ease-in-out left-[12px]
-        sm:w-36
+      <div className={`absolute w-24 bg-bg1 rounded h-[calc(100%-1rem)] duration-500 ease-in-out left-[12px] sm:w-36
         ${slideVariants['option1']} ${slideVariants['option2']} ${slideVariants['option3']}
         ${slideVariants['option2sm']} ${slideVariants['option3sm']}
       `} />

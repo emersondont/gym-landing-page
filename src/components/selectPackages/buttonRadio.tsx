@@ -26,11 +26,8 @@ export default function ButtonRadio(props: Props) {
       />
       <label
         htmlFor={props.id}
-        className={`font-poppins font-medium text-xs text-center text-tx3 
-          cursor-pointer w-24 py-3 z-10 ease-in-out duration-500 
-          sm:text-base sm:w-36
-          ${props.peerChecked}
-        `}
+        className={`font-poppins font-medium text-xs text-center text-tx3 cursor-pointer w-24 py-3 z-10 ease-in-out duration-500 
+        sm:text-base sm:w-36 ${props.peerChecked}`}
       >
         {props.label}
       </label>
