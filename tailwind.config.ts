@@ -33,12 +33,12 @@ const config: Config = {
         fadeInDown: {
           'from': { opacity: '0', transform: 'translateY(-20px)' },
           'to': { opacity: '1', transform: 'translateY(0)' }
-        }
+        },
       },
       animation: {
-        appear: 'appear .4s ease-out',
+        appear: 'appear .4s ease-out both',
         fadeInUp: 'fadeInUp .4s ease-out both',
-        fadeInDown: 'fadeInDown .4s ease-out both'
+        fadeInDown: 'fadeInDown .4s ease-out both',
       },
     },
   },

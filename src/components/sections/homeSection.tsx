@@ -16,7 +16,7 @@ export default function HomeSection() {
         {/* <button className='py-2 px-7 bg-primary text-tx1 rounded-lg animate-fadeInUp animation-delay-400 mt-16 sm:mt-8'>
           <a href="">Conheça nossos planos</a> 
         </button> */}
-        <div className='flex gap-2 bg-bg1 p-2 rounded-lg text-tx1 mt-32 sm:mt-16'>
+        <div className='flex gap-2 bg-bg1 p-2 rounded-lg text-tx1 mt-32 sm:mt-16 animate-fadeInUp animation-delay-400'>
           <SocialIcon icon={FaWhatsapp} name='Whatsapp' />
           <SocialIcon icon={FaInstagram} name='Instagram' />
           <SocialIcon icon={FaFacebookF} name='Facebook' />

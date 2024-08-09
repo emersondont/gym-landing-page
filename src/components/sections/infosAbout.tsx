@@ -1,14 +1,14 @@
 'use client'
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { FiArrowLeft } from "react-icons/fi";
 import InfoCard from "../infoCard";
 import Title from "../title";
 import getAllInfos from "@/data/infos";
 
-
 export default function InfosAbout() {
   const listRef: React.RefObject<HTMLDivElement> = useRef(null)
+  const [isVisible, setIsVisible] = useState(false);
   const [canScroll, setCanScroll] = useState({
     left: false,
     right: true
@@ -27,7 +27,6 @@ export default function InfosAbout() {
     }
   };
 
-
   /**
  * Desloca a lista horizontalmente.
  * @param {number} value - O valor para deslocar a lista. Use valores positivos para rolar para a direita e valores negativos para rolar para a esquerda.
@@ -40,6 +39,25 @@ export default function InfosAbout() {
       });
     }
   }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 } // Ajuste o threshold conforme necessário
+    );
+
+    if (listRef.current) {
+      observer.observe(listRef.current);
+    }
+
+    return () => {
+      if (listRef.current) {
+        observer.unobserve(listRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section className="flex flex-col items-center gap-8">
@@ -54,14 +72,14 @@ export default function InfosAbout() {
             onClick={() => handleScroll(-320)}
             className={(canScroll.left ? 'bg-primary border-primary' : 'bg-transparent border-tx1') +
               ' border  rounded-full w-10 h-10 flex justify-center items-center hover:bg-opacity-80 ease-out duration-500'
-              }>
+            }>
             <FiArrowLeft size={22} />
           </button>
           <button
             onClick={() => handleScroll(320)}
             className={(canScroll.right ? 'bg-primary border-primary' : 'bg-transparent border-tx1') +
               ' border  rounded-full w-10 h-10 flex justify-center items-center hover:bg-opacity-80 ease-out duration-500'
-              }>
+            }>
             <FiArrowLeft size={22} className="rotate-180" />
           </button>
         </div>
@@ -70,7 +88,7 @@ export default function InfosAbout() {
       <div
         ref={listRef}
         onScroll={updateCanScroll}
-        className="flex gap-6 items-stretch w-full px-6 overflow-x-auto snap-x snap-mandatory sm:overflow-hidden"
+        className={"flex gap-6 items-stretch w-full px-6 overflow-x-auto snap-x snap-mandatory sm:overflow-hidden " + (isVisible ? 'animate-fadeInUp animation-delay-200' : '')}
       >
         {infos.map(info => (
           <InfoCard key={info.id} info={info} />
