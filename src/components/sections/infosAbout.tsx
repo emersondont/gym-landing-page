@@ -27,7 +27,6 @@ export default function InfosAbout() {
         left: scrollLeft > 0,
         right: scrollLeft < scrollWidth - clientWidth - 160
       });
-      console.log(scrollLeft, scrollWidth, clientWidth)
     }
   };
 
