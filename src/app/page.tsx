@@ -6,7 +6,7 @@ import Packages from "@/components/sections/packages";
 
 export default function Home() {
   return (
-    <main className="bg-bg2 w-full min-h-screen pb-14 flex flex-col gap-32">
+    <main className="bg-bg2 w-full min-h-screen pb-32 flex flex-col gap-64">
       <HomeSection />
       <InfosAbout />
       <OpeningHours />

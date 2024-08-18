@@ -19,15 +19,13 @@ export default function PackageCard({ pkg }: Props) {
     benefits_button: pkg.bestOffer ? 'gap-16' : 'gap-9',
   }
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4 },
-    }
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.4 } }
   };
   return (
     <motion.div
+      initial="hidden"
+      animate="visible"
       variants={itemVariants}
       className={`relative flex flex-col gap-6 px-6 ${spacing['card']} rounded-2xl ${colors['bg']} overflow-hidden min-w-72 snap-center first:ml-auto last:mr-auto`}>
       <p className={`font-urbanist font-semibold text-lg ${colors['name']} sm:text-xl`}>

@@ -1,7 +1,5 @@
 import { usePackages } from "@/hooks/usePackages"
 import PackageCard from "./packageCard"
-import { motion } from 'framer-motion'
-import { useRef } from "react"
 
 export default function PackagesList() {
   const { data, isLoading, isFetching } = usePackages()
@@ -15,20 +13,12 @@ export default function PackagesList() {
     )
 
   return (
-    <motion.div
-      transition={{ staggerChildren: 0.2 }}
-      initial="hidden"
-      // whileInView="visible"
-      animate="visible"
-      
-      // whileInView={isInView ? "" : "visible"}
-      // animate={isInView ? "visible" : ""}
-      className="flex gap-6 items-center w-full overflow-x-scroll px-6 snap-x snap-mandatory sm:overflow-hidden">
+    <div className="flex gap-6 items-center w-full overflow-x-auto px-6 snap-x snap-mandatory sm:overflow-hidden">
         {
           data?.map((pkg) => (
             <PackageCard key={pkg.id} pkg={pkg} />
           ))
         }
-    </motion.div>
+    </div>
   )
 }

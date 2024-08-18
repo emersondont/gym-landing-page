@@ -16,7 +16,6 @@ export default function Packages() {
         <SelectPackages />
         <PackagesList />
       </QueryClientProvider>
-
     </section>
   )
 }
