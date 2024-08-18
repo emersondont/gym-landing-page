@@ -44,20 +44,20 @@ export default function InfosAbout() {
   }
 
   return (
-    <section className="flex flex-col items-center gap-8">
+    <section id='program' className="flex flex-col items-center gap-8 scroll-mt-14">
       <div className="flex justify-between w-full px-8 items-center lg:px-40 md:px-16">
         <Title>Explore nosso programa</Title>
 
         <div className="text-tx1 flex gap-3">
           <button
             className={`${canScrollVariants[String(canScroll.left)]} border rounded-full w-10 h-10 flex justify-center items-center hover:bg-opacity-80 ease-out duration-500`}
-            onClick={() => handleScroll(-320)}
+            onClick={() => handleScroll(-332)}
           >
             <FiArrowLeft size={22} />
           </button>
           <button
             className={`${canScrollVariants[String(canScroll.right)]} border  rounded-full w-10 h-10 flex justify-center items-center hover:bg-opacity-80 ease-out duration-500`}
-            onClick={() => handleScroll(320)}
+            onClick={() => handleScroll(332)}
           >
             <FiArrowLeft size={22} className="rotate-180" />
           </button>
@@ -65,9 +65,10 @@ export default function InfosAbout() {
       </div>
 
       <motion.div
-        transition={{ staggerChildren: 0.2 }}
+        transition={{ staggerChildren: 0.1 }}
         initial="hidden"
-        whileInView="visible"
+        // whileInView="visible"
+        animate='visible'
         ref={listRef}
         onScroll={updateCanScroll}
         className={"flex gap-6 items-stretch w-full px-6 overflow-x-auto snap-x snap-mandatory sm:overflow-hidden"}

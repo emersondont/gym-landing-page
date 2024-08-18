@@ -21,7 +21,7 @@ export default function Adrress() {
     }
   };
   return (
-    <section className="flex flex-col items-center gap-8 px-8 lg:px-40 md:px-16">
+    <section id='address' className="flex flex-col items-center gap-8 px-8 lg:px-40 md:px-16 scroll-mt-14">
       <Title>Endereço</Title>
 
       <motion.div

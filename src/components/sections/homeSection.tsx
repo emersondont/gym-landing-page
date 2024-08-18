@@ -5,7 +5,7 @@ import SocialIcon from '../socialIcon';
 
 export default function HomeSection() {
   return (
-    <section className='w-full h-screen bg-bg2 flex justify-between items-center py-8 px-8 lg:px-40 md:px-16'>
+    <section id='home' className='w-full h-screen bg-bg2 flex justify-between items-center py-8 px-8 lg:px-40 md:px-16'>
 
       <div className='w-full sm:w-1/2 flex flex-col items-start'>
         <h1 className='font-urbanist font-bold text-6xl text-tx1 animate-fadeInUp'>Transforme seu Corpo e Mente</h1>

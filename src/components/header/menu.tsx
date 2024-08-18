@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { RiMenu3Line, RiCloseLargeLine } from "react-icons/ri";
 
 const options = [
-  { name: 'Início', path: '/' },
-  { name: 'Programa', path: '/' },
-  { name: 'Planos', path: '/' },
-  { name: 'Contatos', path: '/' },
+  { name: 'Início', path: '#home' },
+  { name: 'Programa', path: '#program' },
+  { name: 'Horários', path: '#schedule' },
+  { name: 'Planos', path: '#packages' },
+  { name: 'Endereço', path: '#address' },
 ]
 
 enum MenuStatusType {
