@@ -26,7 +26,7 @@ const montly: Package[] = [
     price: 90.00,
     billed: 'por mês',
     benefits: [
-      '2 dias por semana',
+      '3 dias por semana',
       'Acesso a toda academia',
       'Treinos Personalizados',
       'Acesso a Personal Trainers'
@@ -38,7 +38,7 @@ const montly: Package[] = [
     price: 100.00,
     billed: 'por mês',
     benefits: [
-      '2 dias por semana',
+      '5 dias por semana',
       'Acesso a toda academia',
       'Treinos Personalizados',
       'Acesso a Personal Trainers'
@@ -51,7 +51,7 @@ const montly: Package[] = [
     price: 110.00,
     billed: 'por mês',
     benefits: [
-      '2 dias por semana',
+      'Todos os dias da semana',
       'Acesso a toda academia',
       'Treinos Personalizados',
       'Acesso a Personal Trainers'
@@ -66,7 +66,7 @@ const quarterly: Package[] = [
     price: 220.00,
     billed: 'por 3 meses',
     benefits: [
-      '2 dias por semana',
+      '3 dias por semana',
       'Acesso a toda academia',
       'Treinos Personalizados',
       'Acesso a Personal Trainers'
@@ -78,7 +78,7 @@ const quarterly: Package[] = [
     price: 250.00,
     billed: 'por 3 meses',
     benefits: [
-      '2 dias por semana',
+      '5 dias por semana',
       'Acesso a toda academia',
       'Treinos Personalizados',
       'Acesso a Personal Trainers'
@@ -90,7 +90,7 @@ const quarterly: Package[] = [
     price: 280.00,
     billed: 'por 3 meses',
     benefits: [
-      '2 dias por semana',
+      'Todos os dias da semana',
       'Acesso a toda academia',
       'Treinos Personalizados',
       'Acesso a Personal Trainers'
