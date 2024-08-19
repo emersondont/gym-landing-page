@@ -44,7 +44,7 @@ export default function InfosAbout() {
   }
 
   return (
-    <section id='program' className="flex flex-col items-center gap-8 scroll-mt-14">
+    <section id='program' className="flex flex-col items-center gap-8 scroll-mt-28">
       <div className="flex justify-between w-full px-8 items-center lg:px-40 md:px-16">
         <Title>Explore nosso programa</Title>
 

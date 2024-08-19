@@ -3,7 +3,7 @@ import Title from "../title"
 
 export default function OpeningHours() {
   return (
-    <section id='schedule' className="flex flex-col items-center px-8 lg:px-40 md:px-16 gap-8 scroll-mt-14">
+    <section id='schedule' className="flex flex-col items-center px-8 lg:px-40 md:px-16 gap-8 scroll-mt-28">
       <Title>Horário de Atendimento</Title>
 
       <div className="flex gap-8 bg-bg1 p-12 rounded-xl flex-wrap">
