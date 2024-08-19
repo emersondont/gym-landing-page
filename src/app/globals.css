@@ -12,3 +12,18 @@ html {
 body {
   background-color: #090707;
 }
+
+.stop-scroll > body{
+  overflow: hidden;
+}
+/* 
+dialog {
+  background-color: red;
+  border: none;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+dialog::backdrop {
+  background-color: blue;
+} */
