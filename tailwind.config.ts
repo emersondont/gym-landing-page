@@ -16,6 +16,7 @@ const config: Config = {
         tx2: '#E1E1E1',
         tx3: '#878787',
         tx4: 'rgba(255, 255, 255, 0.5)',
+        tx5: '#48474e'
       },
       fontFamily: {
         'poppins': ['Poppins', 'sans-serif'],

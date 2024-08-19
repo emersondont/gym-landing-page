@@ -106,7 +106,7 @@ const others: Package[] = [
     price: 900.00,
     billed: 'por 1 ano',
     benefits: [
-      '2 dias por semana',
+      'Todos os dias da semana',
       'Acesso a toda academia',
       'Treinos Personalizados',
       'Acesso a Personal Trainers'
@@ -125,6 +125,8 @@ const others: Package[] = [
     ]
   },
 ]
+
+export const linkWhatsapp = 'https://wa.me/5553999833838'
 
 export default function getAllPackages() {
   return [

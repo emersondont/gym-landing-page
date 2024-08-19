@@ -1,15 +1,15 @@
 'use client'
 import img from '@/../public/pngwing 5.png'
 import Image from 'next/image'
-import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
+
 import SocialIcon from '../socialIcon';
 import { motion } from 'framer-motion';
-import Modal from '../modal';
+import ModalQRcode from '../modalQRcode';
 import { useState } from 'react';
-import {QRCodeSVG} from 'qrcode.react';
+import { links } from '@/data/links';
 
 export default function HomeSection() {
-  const [isOpen, setIsOpen] = useState(false);
+
   const itemVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -20,7 +20,7 @@ export default function HomeSection() {
   };
   return (
     <motion.section
-      transition={{ staggerChildren: 0.2 }}
+      transition={{ staggerChildren: 0.1 }}
       initial="hidden"
       animate="visible"
       id='home' className='w-full h-screen bg-bg2 flex justify-between items-center py-8 px-8 mt-7 scroll-mt-7 lg:px-40 md:px-16'>
@@ -32,18 +32,23 @@ export default function HomeSection() {
         </motion.p>
 
         <motion.div variants={itemVariants} className='flex gap-2 bg-bg1 p-2 rounded-lg text-tx1 mt-32 sm:mt-16'>
-          <SocialIcon icon={FaWhatsapp} onClick={() => setIsOpen(true)}>Whatsapp</SocialIcon>
-          <Modal open={isOpen} close={() => setIsOpen(false)}>
-            <a href='#' className='font-poppins hover:text-primary duration-200 ease-out'>
-              Clique aqui ou escaneie o QR code abaixo
-            </a>
-            <QRCodeSVG value="" size={256}/>
-          </Modal>
-          <SocialIcon icon={FaInstagram}>Instagram</SocialIcon>
-          <SocialIcon icon={FaFacebookF}>Facebook</SocialIcon>
-        </motion.div>
+          {
+            links.map((link, index) => (
+              <SocialIcon
+                key={index}
+                href={link.href}
+                icon={link.icon}
+                qrCode={link.qrCode}
+                qrCodeMessage={link.qrCodeMessage}
+              >
+                {link.name}
+              </SocialIcon>
 
+            ))
+          }
+        </motion.div>
       </div>
+
       <motion.div variants={itemVariants} className='h-full'>
         <Image
           src={img}

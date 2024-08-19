@@ -2,15 +2,15 @@
 export const address = [
   {
     title: 'RUA',
-    content: 'Rua São Paulo, 123'
+    content: 'XXXXXXXXX, 123'
   },
   {
     title: 'CIDADE',
-    content: 'São Paulo'
+    content: 'XXX XXXXX'
   },
   {
     title: 'ESTADO',
-    content: 'SP'
+    content: 'XX'
   },
   {
     title: 'CEP',

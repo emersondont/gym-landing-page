@@ -10,7 +10,7 @@ export default function Packages() {
 
   return (
     <section id='packages' className="flex flex-col items-center gap-8 scroll-mt-14">
-      <Title>Nossos Pacotes</Title>
+      <Title>Nossos Planos</Title>
 
       <QueryClientProvider client={queryClient}>
         <SelectPackages />

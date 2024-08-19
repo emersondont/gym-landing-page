@@ -1,12 +1,15 @@
-import { Package } from "@/data/packages";
+import { Package, linkWhatsapp } from "@/data/packages";
 import { FaCircleCheck } from "react-icons/fa6";
 import { motion } from 'framer-motion';
+import { useState } from "react";
+import ModalQRcode from "./modalQRcode";
 
 type Props = {
   pkg: Package;
 }
 
 export default function PackageCard({ pkg }: Props) {
+  const [isOpen, setIsOpen] = useState(false);
   const colors = {
     bg: pkg.bestOffer ? 'bg-primary' : 'bg-bg1',
     name: pkg.bestOffer ? 'text-tx1' : 'text-primary',
@@ -55,7 +58,7 @@ export default function PackageCard({ pkg }: Props) {
           }
         </ul>
 
-        <button className={`font-poppins font-medium text-sm py-4 2-full rounded-xl text-tx1 ${colors['bgButton']} 2-full hover:bg-opacity-80 ease-out duration-200 sm:text-base`}>
+        <button onClick={()=>setIsOpen(true)} className={`font-poppins font-medium text-sm py-4 2-full rounded-xl text-tx1 ${colors['bgButton']} 2-full hover:bg-opacity-80 ease-out duration-200 sm:text-base`}>
           Contratar
         </button>
       </div>
@@ -69,6 +72,13 @@ export default function PackageCard({ pkg }: Props) {
           </div>
         )
       }
+
+      <ModalQRcode
+        open={isOpen}
+        close={() => setIsOpen(false)}
+        href={linkWhatsapp}
+        message='Escaneie este QR Code para acessar o link do nosso WhatsApp e solicionar o plano'
+      />
     </motion.div>
   )
 }
